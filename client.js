@@ -11,6 +11,12 @@ const buttons = {
     fourthRow: ['1', '2', '3', '+'],
     finalRow: ['0', '.', '=']
 }
+const operations = {
+    divide: (num, total) => total/num,
+    multiply: (num, total) => total*num,
+    subtraction: (num, total) => total -= num,
+    addition: (num, total) => total += num
+}
 
 let total = 0;
 
@@ -29,23 +35,16 @@ const generateButton = (buttons) => {
     }
     return calculatorHtml;
 }
+// Updates displayed Total
+const updateTotal = () => document.getElementById("total").innerHTML=total;
 // IF total 0 & Number buttons pressed, add to total & Display it
 
 // operator functions - need way to validate number or other operator?
 // Clear => resets #total content to 0
 const clear = () => {
     total = 0;
-    document.getElementById("total").innerHTML=total;
+    updateDiTotal();
 }
-// Divide => Divides total by pressed number
-const divide = (num, total) => total/num;
-// multiply
-const multiply = (num, total) => total*num;
-// subtract
-const subtraction = (num, total) => total -= num;
-// adds
-const addition = (num, total) => total += num;
-
 // Need container function for background total (like state) before displayed?
 
 (() => {
