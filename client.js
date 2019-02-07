@@ -46,6 +46,7 @@ const calculate = ({operations} = add, subtract, divide, multiply) => {
         default:
             console.log('No operator, retain total', total);
     }
+    updateTotal();
 }
 
 // operator functions - need way to validate number or other operator?
